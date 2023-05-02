@@ -1,5 +1,6 @@
 
 body {
+    overflow: hidden;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -75,82 +76,87 @@ body {
 }
 
 .wrapper {
+    margin-top: 50px;
     grid-column: 1/7;
-    width: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 15px;
-    margin: 0;
+    border: 2px solid yellow;
 }
 
 #cad-form {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    grid-column: auto;
-    background-color: rgba(114, 114, 247, 0.5);
+    padding: 10px;
+    align-items: center;
+    background-color: rgb(255,255,255, 0.4);
     border: 2px solid green;
-    
 }
 
 #edit-form {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    padding: 10px;
     grid-column: auto;
-    background-color: rgba(114, 114, 247, 0.5);
+    align-items: center;
+    background-color: rgb(255,255,255, 0.4);
     border: 2px solid blue;
-    
 }
 
 #search-form {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    padding: 10px;
     grid-column: auto;
-    background-color: rgba(114, 114, 247, 0.5);
+    align-items: center;
+    background-color: rgb(255,255,255, 0.4);
     border: 2px solid yellowgreen;
-    
 }
 
 #result-form {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 10px;
     grid-column: auto;
-    background-color: rgba(114, 114, 247, 0.5);
+    background-color: rgb(255,255,255, 0.4);
     border: 2px solid chocolate;
-    
+}
+
+textarea {
+    height: 70%;
+    width: 80%;
+    background-color: rgba(143, 143, 228, 0.5);
 }
 
 p {
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
+    margin-bottom: 5px;
 }
 
-/*.container-grid > #btn {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    border: none;
-    cursor: pointer;
-    margin-top: 500px;
-    margin-bottom: 130px;
-    padding: 10px 20px;
-    align-items: center;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-     
+input {
+    width: 70%;
 }
 
-.btn:hover {
+button:hover {
     text-decoration: none;
     color: #FF725E;
     background-color: black;
     transition: 0.2s;
-}*/
+}
 
 #rdp {
     grid-area: 5 / 1 / span 1 / span 6;
     font-size: 25px;
     text-align: center;
+    height: 20px;
     padding: 10px;
-    background-color: transparent;
-    border: 3px solid black;
+    margin-top: 190px;
+    background-color: rgb(255,255,255, 0.4);
+    
 }
