@@ -16,7 +16,7 @@
 <body>
         
     <div class="container-grid">
-            <header>
+            <header id="cabecalho">
                 <h1>Cadastro de séries</h1>
                 <h2>Cadastre a sua série preferida</h2>
             </header> 
@@ -30,9 +30,9 @@
                 <p>Episódio</p>
                 <input type="number">
 
-                <div class="btn">
+                <div class="btn" id="cad-btn">
                 <button>Cadastrar</button>
-                <button>Limpar</button>
+                <button type="reset">Limpar</button>
                 </div>
             </div>
 
@@ -44,7 +44,7 @@
                 <p>Episódio</p>
                 <input type="number">
 
-                <div class="btn">
+                <div class="btn" id="edit-btn">
                     <button>Editar</button>
                     <button>Deletar</button>
                     <button>Limpar</button>
@@ -59,7 +59,7 @@
                 <p>Episódio</p>
                 <input type="number">
 
-                <div class="btn">
+                <div class="btn" id="search-btn">
                     <button>Pesquisar</button>
                     <button>Limpar</button>
                 </div>
@@ -68,7 +68,7 @@
             <div class="hide" id="result-form">Resultado
                 <textarea name="" id="result" cols="40" rows="15"></textarea>
 
-                <div>
+                <div class="btn" id="result-btn">
                     <button>Limpar</button>
                     <button>Sair</button>
                 </div>
