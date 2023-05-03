@@ -46,23 +46,20 @@ body {
     }
 }
 
+::placeholder {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
 .container-grid {
     display: grid;
+    height: 100vh;
     grid-template-columns: auto auto auto;
     background-color: transparent;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     gap: 10px;
-    height: 100vh;
     border: 2px solid red;
-}
-
-.container-grid > div {
-    display: grid;
-    font-size: 30px;
-    text-align: center;
-    padding: 10px;
-    font-family: 'Bruno Ace SC', 'cursive';
-    background-color: transparent;
 }
 
 .container-grid > header {
@@ -70,84 +67,94 @@ body {
     font-size: 20px;
     text-align: center;
     font-family: 'Bruno Ace SC', 'cursive';
-    border: 2px solid black;
+    border: 2px solid orange;
     background-color: transparent;
 }
 
 #cabecalho {
     height: 150px;
     padding: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 .wrapper {
-    padding: 50px;
-    margin-bottom: 50px;
+    height: 95%;
     grid-column: 1/7;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: auto;
-    column-gap: 15px;
-    row-gap: 15px;
+    column-gap: 40px;
+    row-gap: 50px;
+    margin-bottom: 0;
     border: 2px solid yellow;
 }
 
-#cad-form {
-    height: 100%;
+.wrapper > .hide {
+    grid-template-columns: 3, 1fr;
+}
+
+.cad-form,
+.edit-form,
+.search-form,
+#result-form {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
-    margin-bottom: 10px;
-    padding: 10px;
+    border-radius: 15px;
     align-items: center;
+    padding: 1rem;
+    font-size: 30px;
     background-color: rgb(255,255,255, 0.4);
     border: 2px solid green;
 }
 
-#edit-form {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-    margin-bottom: 10px;
-    padding: 10px;
-    grid-column: auto;
-    align-items: center;
-    background-color: rgb(255,255,255, 0.4);
+.cadastro,
+.search,
+.editar,
+.result {
+    align-content: center;
+    width: 90%;
+    margin: auto 0;
+    padding: 1rem;
+    max-width: 100%;
+    border-radius: 15px;
+    background-color: rgb(143, 143, 228, 0.5);
+    border: 2px solid black;
+}
+
+/*.result {
+    align-content: center;
+    margin: auto auto;
+    width: 90%;
+    padding: 1rem;
+    max-width: 100%;
+    border-radius: 15px;
+    background-color: rgb(143, 143, 228, 0.5);
     border: 2px solid blue;
+}*/
+
+.hide {
+    display: none;
 }
 
-#search-form {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-    margin-bottom: 10px;
-    padding: 10px;
-    grid-column: auto;
-    align-items: center;
-    background-color: rgb(255,255,255, 0.4);
-    border: 2px solid yellowgreen;
-}
-
-#result-form {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 10px;
-    padding: 10px;
-    grid-column: auto;
-    background-color: rgb(255,255,255, 0.4);
-    border: 2px solid chocolate;
-}
+/*textarea {
+    height: auto;
+    width: 100%;
+    background-color: rgb(143, 143, 228, 0.5);
+}*/
 
 textarea {
-    height: 70%;
-    width: 80%;
-    background-color: rgb(143, 143, 228, 0.5);
-}
+    margin-left: 2.5rem;
+    padding: 0.5rem;
+    font-size: 18px;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    max-width: 100%;
+    max-height: 200px;
+    resize: none;
+    border: 1px solid #0b2ce6;
+    background-color: rgba(248, 246, 246, 0.5); 
+  }
 
 p {
     font-family: 'Roboto', sans-serif;
@@ -155,23 +162,61 @@ p {
     margin-bottom: 5px;
 }
 
+h3 {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 80px;
+    font-family: 'Bruno Ace SC', 'cursive';
+}
+
 input {
+    padding: 0.3rem 0.5rem;
+    line-height: 10px;
     width: 70%;
+    font-weight: bold;
+    width: 70%;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(248, 246, 246, 0.5);
+}
+
+#botao {
+    width: 90%;
+    padding-left: 40px;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    border: 1px solid violet;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 1em;
+    font-weight: 600;
+    align-items: center;
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
+    background-color: rgb(200, 200, 247);
+    transition: 0.2s;
 }
 
 button:hover {
     text-decoration: none;
     color: black;
-    background-color: rgb(121, 121, 235);
+    background-color: white;
     transition: 0.2s;
 }
 
-#rdp {
+.rodape {
     grid-area: 5 / 1 / span 1 / span 6;
     font-size: 25px;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 0;
     height: 20px;
     padding: 10px;
     background-color: rgb(255,255,255, 0.4);
+    border: 1px solid crimson;
 }

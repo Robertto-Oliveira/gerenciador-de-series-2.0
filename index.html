@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="javascript.js" defer></script>
     <title>Geenciador de Séries 3.0</title>
 </head>
 <body>
@@ -21,63 +22,84 @@
                 <h2>Cadastre a sua série preferida</h2>
             </header> 
                          
-        <div class="wrapper">    
-            <div id="cad-form">Cadastro
-                <p>Série</p>
-                <input type="text">
-                <p>Temporada</p>
-                <input type="number" min="1" max="100">
-                <p>Episódio</p>
-                <input type="number">
+        <div class="wrapper">
+               
+                <form class="cad-form" action="submit">
+                    <div class="cadastro"> 
+                        <h3>Cadastro</h3>    
+                        <p>Série</p>
+                        <input type="text">
+                        <p>Temporada</p>
+                        <input type="number" min="1" max="100">
+                        <p>Episódio</p>
+                        <input type="number">
+                        <br>
+                        
+                        <div id="botao">
+                            <button type="button" id="add-btn" >Cadastrar</button>
+                            <button type="reset" id="clear-btn">Limpar</button>
+                        </div>
+                    </div>
+                </form>
+            
 
-                <div class="btn" id="cad-btn">
-                <button>Cadastrar</button>
-                <button type="reset">Limpar</button>
+            
+                <form class="edit-form" action="submit">
+                    <div class="editar">
+                        <h3>Editar</h3>      
+                        <p>Série</p>
+                        <input type="text">
+                        <p>Temporada</p>
+                        <input type="number" min="1" max="100">
+                        <p>Episódio</p>
+                        <input type="number">
+                        <br>
+                        
+                        <div id="botao">
+                            <button type="button" id="edit-btn">Editar</button>
+                            <button type="button" id="delete-btn">Deletar</button>
+                            <button type="reset" id="clear-btn">Limpar</button>
+                        </div>
+                    </div>    
+                </form>
+            
+            <form class="search-form" action="submit">
+                <div class="search">
+                    <h3>Pesquisar</h3>
+                    <p>Série</p>
+                    <input type="text">
+                    <p>Temporada</p>
+                    <input type="number" min="1" max="100">
+                    <p>Episódio</p>
+                    <input type="number">
+                    <br>
+                    
+                    <div id="botao">
+                        <button type="button" id="search-btn" onclick="showForm('result-form')">Pesquisar</button>
+                        <button>Limpar</button>
+                    </div>
                 </div>
-            </div>
+            </form>
 
-            <div id="edit-form">Editar
-                <p>Série</p>
-                <input type="text">
-                <p>Temporada</p>
-                <input type="number" min="1" max="100">
-                <p>Episódio</p>
-                <input type="number">
+            <form  id="result-form" class="hide">
+                <div class="result">
+                    <h3>Resultado</h3>
+                    <textarea name="resultado" id="result-search" cols="40" rows="20"></textarea>
+                    <br>
+                    
+                    <div id="botao">
+                        <button type="reset" id="clear-btn">Limpar</button>
+                        <button id="exit-btn" type="button">Sair</button>
+                    </div>
+                </div>    
+            </form>
 
-                <div class="btn" id="edit-btn">
-                    <button>Editar</button>
-                    <button>Deletar</button>
-                    <button>Limpar</button>
-                </div>
-            </div>
-
-            <div id="search-form">Pesquisar
-                <p>Série</p>
-                <input type="text">
-                <p>Temporada</p>
-                <input type="number" min="1" max="100">
-                <p>Episódio</p>
-                <input type="number">
-
-                <div class="btn" id="search-btn">
-                    <button>Pesquisar</button>
-                    <button>Limpar</button>
-                </div>
-            </div>
-
-            <div class="hide" id="result-form">Resultado
-                <textarea name="" id="result" cols="40" rows="15"></textarea>
-
-                <div class="btn" id="result-btn">
-                    <button>Limpar</button>
-                    <button>Sair</button>
-                </div>
-            </div>
-
-            <footer id="rdp">Copyright - Roberto Brito de Oliveira - 2023</footer>
+            
 
         </div>
-        
+        <div class="rodape">
+            <footer id="rdp">Copyright - Roberto Brito de Oliveira - 2023</footer>
+        </div>
 
     </div>
         
