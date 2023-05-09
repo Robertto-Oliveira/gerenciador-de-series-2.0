@@ -1,6 +1,6 @@
 
 body {
-    overflow: hidden;
+    /*overflow: hidden;*/
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,107 +10,82 @@ body {
     background-color: rgb(200, 200, 247);
 }
 
-@media (min-width:360px) {
-    body {
-        background-image: url("images/home-cinema-rafiki-360.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-}
-
-@media (min-width:768px) {
-    body {
-        background-image: url("images/home-cinema-rafiki-768.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-}
-
-@media (min-width:992px) {
-    body {
-        background-image: url("images/home-cinema-rafiki-992.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-}
-
-@media (min-width:1200px) {
-    body {
-        background-image: url("images/home-cinema-rafiki-1200.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-}
-
 ::placeholder {
     color: black;
     font-size: 15px;
-    font-weight: bold;
-  }
+    font-weight: 100;
+}
 
 .container-grid {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
+    padding: 10px 20px 0 20px;
+    gap: 10px;
     grid-template-columns: auto auto auto;
     background-color: transparent;
-    padding: 20px 20px 0 20px;
-    gap: 10px;
     border: 2px solid red;
 }
 
+.container-grid {
+    grid-template-areas: 
+        "image heading"
+        "image content"
+        "heading"
+        "image"
+        "content"
+}
+
 .container-grid > header {
-    grid-column: 1/7;
+    grid-column: 1/6;
     font-size: 20px;
     text-align: center;
     font-family: 'Bruno Ace SC', 'cursive';
-    border: 2px solid orange;
+    border: 2px solid black;
     background-color: transparent;
 }
 
 #cabecalho {
-    height: 150px;
-    padding: 20px;
-    margin-bottom: 10px;
+    margin-top: 0;
+    justify-content: center;
+    height: 100px;
+    padding: 10px;
 }
 
-.wrapper {
+h1, h2 {
+    padding: 5px;
+    margin: 5px;
+}
+
+.container-form {
+    display: flex;
+    flex: 1;
     height: 95%;
-    grid-column: 1/7;
+    grid-column: 2/6;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: auto;
-    column-gap: 40px;
-    row-gap: 50px;
-    margin-bottom: 0;
-    border: 2px solid yellow;
-}
-
-.wrapper > .hide {
-    grid-template-columns: 3, 1fr;
+    column-gap: 30px;
+    row-gap: 40px;
+    padding: 20px;
+    border: 2px solid blue;
 }
 
 .cad-form,
 .edit-form,
 .search-form,
 #result-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    width: 90%;
     border-radius: 15px;
     align-items: center;
     padding: 1rem;
     font-size: 30px;
-    background-color: rgb(255,255,255, 0.4);
     border: 2px solid green;
 }
 
 .cadastro,
 .search,
-.editar,
+.editar, 
 .result {
     align-content: center;
     width: 90%;
@@ -122,39 +97,22 @@ body {
     border: 2px solid black;
 }
 
-/*.result {
-    align-content: center;
-    margin: auto auto;
-    width: 90%;
-    padding: 1rem;
-    max-width: 100%;
-    border-radius: 15px;
-    background-color: rgb(143, 143, 228, 0.5);
-    border: 2px solid blue;
-}*/
-
 .hide {
     display: none;
 }
 
-/*textarea {
-    height: auto;
-    width: 100%;
-    background-color: rgb(143, 143, 228, 0.5);
-}*/
-
 textarea {
-    margin-left: 2.5rem;
+    margin-left: 1rem;
     padding: 0.5rem;
     font-size: 18px;
     box-shadow: 0 0 0 0;
     outline: 0;
-    max-width: 100%;
+    max-width: 90%;
     max-height: 200px;
     resize: none;
     border: 1px solid #0b2ce6;
     background-color: rgba(248, 246, 246, 0.5); 
-  }
+}
 
 p {
     font-family: 'Roboto', sans-serif;
@@ -163,6 +121,7 @@ p {
 }
 
 h3 {
+    text-align: center;
     font-weight: 400;
     font-size: 34px;
     line-height: 80px;
@@ -174,15 +133,92 @@ input {
     line-height: 10px;
     width: 70%;
     font-weight: bold;
-    width: 70%;
     font-family: 'Roboto', sans-serif;
     background-color: rgba(248, 246, 246, 0.5);
 }
+#cad-temp, 
+#edit-temp,
+#search-temp,
+#cad-episode,
+#edit-episode,
+#search-episode {
+    width: 2.5rem;
+    font-size: 1rem;
+    margin: 0.25rem;
+    padding: 0.25rem 0.5rem;
+}
+
+#cad-temp {
+    width: 50%;
+    margin-right: 0.3rem;
+}
+
+#cad-episode {
+    width: 50%;
+}
+
+.division-cad {
+    justify-content: space-between;
+    width: 70%;
+    padding: 10px;
+    display: flex;
+    border-right: 1px solid DDD;
+    border: 1px solid yellow;
+}
+.division-cad > p {
+    font-size: medium;
+}
+
+#edit-temp {
+    width: 50%;
+    margin-right: 0.3rem;
+}
+
+#edit-episode {
+    width: 50%;
+}
+
+.division-edit {
+    justify-content: space-between;
+    
+    width: 70%;
+    padding: 10px;
+    display: flex;
+    border-right: 1px solid DDD;
+    border: 1px solid yellow;
+}
+
+.division-edit > p {
+    font-size: medium;
+}
+
+#search-temp {
+    width: 50%;
+    margin-right: 0.3rem;
+}
+
+#search-episode {
+    width: 50%;
+}
+
+.division-search {
+    justify-content: space-between;
+    width: 70%;
+    padding: 10px;
+    display: flex;
+    border-right: 1px solid DDD;
+    border: 1px solid yellow;
+}
+
+.division-search > p {
+    font-size: medium;
+}
 
 #botao {
-    width: 90%;
-    padding-left: 40px;
-    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    width: 70%;
+    
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
